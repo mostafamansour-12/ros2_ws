@@ -9,6 +9,7 @@ class LoggerNode(Node):
             SensorProperties, 'sensor_properties', self.listener_callback, 10)
 
     def listener_callback(self, msg):
+        self.get_logger().info(f"Received sensor properties: {msg.sensor_values}")
         if msg.quality >= 50:
             readings = ", ".join([f"{s.range:.2f} cm" for s in msg.sensor_values])
             self.get_logger().info(f"Quality = {msg.quality} → {readings}")

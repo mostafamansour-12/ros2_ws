@@ -28,6 +28,7 @@ class ValidatorNode(Node):
     def run(self):
         self.msg.quality = random.randint(1,100)
         self.msg.sensor_values = f'Ultrasonic: {float(self.ultradata)}, Infrared: {float(self.infradata)}'
+        self.pub.publish(self.msg)
         self.logger.info(f'Quality: {self.msg.quality}, {self.msg.sensor_values}')
 
 
