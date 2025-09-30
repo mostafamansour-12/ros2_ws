@@ -1,0 +1,2 @@
+int64 quality
+string sensor_values

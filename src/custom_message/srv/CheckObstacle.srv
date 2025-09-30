@@ -1,0 +1,4 @@
+int64[] sensor_values
+---
+bool obstacle_detected
+string message
